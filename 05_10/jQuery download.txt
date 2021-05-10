@@ -1,0 +1,22 @@
+jQuery download
+jQuery mobile
+
+CDN      : <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+DOWNLOAD : https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+NAME     : jquery.min.1.12.4.js
+
+github repository :
+https://github.com/jonghak96/jquery.git
+
+1. 클래스
+2. 달력 알고리즘
+3. 아날로그시계 알고리즘
+4. 쿠키
+5. 서버API (DB / PHP)
+6. ajax
+7. 로그인 로그아웃
+8. 애니메이션 (svg)
+9. 아코디언 메뉴
+10. 3D 슬라이드
+11. 마우스무브
+12. 터치스와이프
