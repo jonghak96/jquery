@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Library</title>
+    <style>
+        body {text-align: center;}
+        #outputBox span {border: 2px solid #c00;margin: 0 10px;}
+    </style>
+    <script src="./js/jquery.min.1.12.4.js"></script>
+    <script>
+        $(function() {
+            var obj = {
+                a: 100,
+                init: function() {
+                    this.btn01Fn();
+                    this.btn02Fn();
+                    this.btn03Fn();
+                    this.btn04Fn();
+                    this.btn05Fn();
+                    this.btn06Fn();
+                },
+                btn01Fn() {
+                    $("#btn01").click(function() {
+                        $(".output01").text("<i>버튼01 클릭 이벤트 출력내용</i>");
+                    });
+                },
+                btn02Fn() {
+                    $("#btn02").click(function() {
+                        $(".output02").html("<i>버튼02 클릭 이벤트 출력내용</i>");
+                    });
+                },
+                btn03Fn() {
+                    // $("#btn03").off("click", function() {
+                    $("#btn03").on("click", function() {
+                        $(".output03").html("<h1>버튼03 클릭 이벤트 출력내용</h1>");
+                    });
+                },
+                btn04Fn() {
+                    $("#btn04").on({
+                        click: function() {
+                            $(".output04").html("<mark>버튼04 클릭 이벤트 출력내용</mark>");
+                        },
+                        mouseover() {
+                            $(".output04").html("<b>버튼04 마우스오버 이벤트 출력내용</b>");
+                        },
+                        mouseout() {
+                            $(".output04").html("&nbsp;");
+                        },
+                        focusin() {
+                            $(".output04").html("<span style='color:#00c'>버튼04 포커스인 이벤트 출력내용</mark>");
+                        },
+                        focusout() {
+                            $(".output04").html("<span style='color:#0c0'>버튼04 포커스아웃 이벤트 출력내용</mark>");
+                        }
+                    });
+                },
+                btn05Fn() {
+                    var cnt = 0;
+                    $("#btn05").on({
+                        click(e) {
+                            $(".output05").html(`<h1>${++cnt}</h1>`);
+                            console.log(e);
+                        }
+                    });
+                },
+                btn06Fn() {
+                    var that = this;
+                    var cnt = 0;
+                    $("#btn06").one({
+                        click(e) {
+                            $(".output06").html(`<h1>${cnt+=2}</h1>`);
+                            console.log("this :", this);
+                            console.log("this.a :", this.a);
+                            console.log("that.a :", that.a);
+                        }
+                    });
+                }
+            };// obj //
+            obj.init();
+        });// jQuery //
+    </script>
+</head>
+<body>
+
+    <div id="buttonBox">
+        <button id="btn01">버튼01</button>
+        <button id="btn02">버튼02</button>
+        <button id="btn03">버튼03</button>
+        <button id="btn04">버튼04</button>
+        <button id="btn05">버튼05</button>
+        <button id="btn06">버튼06</button>
+    </div>
+
+    <hr>
+
+    <div id="outputBox">
+        <span class="output01">&nbsp;</span>
+        <span class="output02">&nbsp;</span>
+        <span class="output03">&nbsp;</span>
+        <span class="output04">&nbsp;</span>
+        <span class="output05">&nbsp;</span>
+        <span class="output06">&nbsp;</span>
+    </div>
+    
+</body>
+</html>
