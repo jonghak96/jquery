@@ -72,7 +72,6 @@
             // 3. 이전 슬라이드 카운트 함수
             // 4. 다음 버튼 클릭 이벤트
 
-            var cnt = 0;
             $(".page-btn").removeClass("addPage"); // 초기화
             $(".page-btn").eq(0).addClass("addPage"); // eq()
             
@@ -92,7 +91,7 @@
                 // $(".page-btn").eq(cnt).addClass("addPage");
                 $(".page-btn").eq(cnt>2 ? 0 : cnt).addClass("addPage");
                 // $(".page-btn").eq(cnt<0 ? 2 : cnt).addClass("addPage");
-                // nth:child(), eq()가 0보다 작으면 자동으로 0으로 인식합니다.
+                // nth:child(), eq()가 0보다 작으면 자동으로 인식합니다.
                 console.log(cnt);
             }
 

@@ -1,0 +1,7 @@
+index.html 짜고,
+reset.css 짜고,
+style.css 짜기.
+> Dom tree 형식으로 만들고,
+헤더, 섹션, 풋터 너비,높이,배경색 설정.
+z-index 설정.
+

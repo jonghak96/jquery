@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+#wrap {width:100%;}
+#header {z-index:3;position:fixed;top:-80px;left:0;width:100%;height:80px;background:rgba(0, 0, 0, 0);transition:all .5s;}
+#header.addHeader {top:0;background:rgba(0, 0, 0, .7);transition:all 1s;}
+#main {z-index:2;position:relative;width:100%;}
+#section01 {width:100%;height:969px;} /* js에서 창높이로 설정할 것. */
+#section01 .slide-container {position:relative;width:100%;height:100%;}
+/* 슬라이드 뷰 */
+#section01 .slide-container .slide-view {z-index:1;position:relative;width:100%;height:100%;overflow: hidden;}
+#section01 .slide-container .slide-view .slide-wrap {position:relative;left:calc(1903px*0);width:calc(100%*5);height:100%;margin-left:-1903px;} /* js에서 창너비로 설정.*/
+#section01 .slide-container .slide-view .slide-wrap .slide {float:left;width:100%;max-width:1903px;/*js에서 창너비*/height:100%;background:url(../img/home-interior-design-slider-img01.jpg) no-repeat 50% 50%;background-size:cover;}
+#section01 .slide-container .slide-view .slide-wrap .slide1 {background-image:url(../img/home-interior-design-slider-img01.jpg);}
+#section01 .slide-container .slide-view .slide-wrap .slide2 {background-image:url(../img/home-interior-design-slider-img02.jpg);}
+#section01 .slide-container .slide-view .slide-wrap .slide3 {background-image:url(../img/home-interior-design-slider-img03.jpg);}
+#section01 .slide-container .slide-view .slide-wrap .slide .title {display:none;}
+/* 슬라이드 좌우화살버튼 */
+#section01 .slide-container .prev {z-index:2;position:absolute;top:50%;left:50px;width:40px;height:40px;margin-top:-20px;transform:rotate(-45deg);} /*화살표 높이/2만큼 위로 올려줌.*/
+#section01 .slide-container .prev a {display:block;width:100%;height:100%;}
+#section01 .slide-container .prev a i {display:block;width:100%;height:100%;border-top:2px solid #fff;border-left:2px solid #fff;}
+#section01 .slide-container .next {z-index:2;position:absolute;top:50%;right:50px;width:40px;height:40px;margin-top:-20px;transform:rotate(45deg);}
+#section01 .slide-container .next a {display:block;width:100%;height:100%;}
+#section01 .slide-container .next a i {display:block;width:100%;height:100%;border-top:2px solid #fff;border-right:2px solid #fff;}
+/* 슬라이드 페이지버튼 */
+#section01 .slide-container .page-wrap {z-index:2;position:absolute;bottom:50px;left:0;width:100%;height:12px;text-align:center;}
+#section01 .slide-container .page-wrap span {display:inline-block;width:12px;height:12px;margin:0 5px;border-radius:50%;overflow:hidden;}
+#section01 .slide-container .page-wrap span a {display:block;width:100%;height:100%;background:rgba(255, 255, 255, .4);}
+#section01 .slide-container .page-wrap span a.addPage {background:rgba(255, 255, 255, 1);}
+
+#section02 {width:100%;height:600px;background:#f0f0f0;}
+#section03 {width:100%;}
+#section04 {width:100%;}
+#section05 {width:100%;}
+#section06 {width:100%;}
+#section07 {width:100%;}
+#section08 {width:100%;}
+#section09 {width:100%;}
+#section10 {width:100%;}
+div.goTop-wrap {z-index: 3;position: fixed;bottom: 30px;right: 30px;width: 50px;height: 50px;background: red;border-radius: 50%;overflow: hidden;}
+div.goTop-wrap span {display: inline-block;width: 100%;height: 100%;}
+div.goTop-wrap span a {display: block;width: 100%;height: 100%;}
+div.goTop-wrap span a i {position: fixed;bottom:39px;right:43.5px;width: 20px;height: 20px;border-left: 3px solid white;border-top: 3px solid white;transform: rotate(45deg);}
+#footer {z-index:1;position:relative;width:100%;height:316px;background:#232323;}
