@@ -14,9 +14,11 @@
 #section01 .slide-container .slide-view .slide-wrap .slide1 {background: url(../img/home-interior-design-slider-img01.jpg);}
 #section01 .slide-container .slide-view .slide-wrap .slide2 {background: url(../img/home-interior-design-slider-img02.jpg);}
 #section01 .slide-container .slide-view .slide-wrap .slide3 {background: url(../img/home-interior-design-slider-img03.jpg);}
-#section01 .slide-container .slide-view .slide-wrap .slide1 {z-index: 3;}
-#section01 .slide-container .slide-view .slide-wrap .slide2 {z-index: 2;}
-#section01 .slide-container .slide-view .slide-wrap .slide3 {z-index: 1;}
+#section01 .slide-container .slide-view .slide-wrap .slide4 {background: url(../img/home-interior-design-services-02.jpg);}
+#section01 .slide-container .slide-view .slide-wrap .slide1 {z-index: 4;}
+#section01 .slide-container .slide-view .slide-wrap .slide2 {z-index: 3;}
+#section01 .slide-container .slide-view .slide-wrap .slide3 {z-index: 2;}
+#section01 .slide-container .slide-view .slide-wrap .slide4 {z-index: 1;}
 #section01 .slide-container .slide-view .slide-wrap .slide .title {display:none;}
 
 #section01 .slide-container .prev {z-index: 2;position: absolute;top: 50%;left: 50px;width: 40px;height: 40px;margin-top: -20px;transform: rotate(-45deg);}

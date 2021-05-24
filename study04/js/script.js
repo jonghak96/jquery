@@ -16,52 +16,55 @@
         section01Fn() {
 
             // 페이드 인아웃 알고리즘
-            // 스토리보드
+            
+            // 스토리보드 2
             // 1. 메인 슬라이드 함수
-            // 2. 다음 슬라이드 함수
-            // 3. 다음화살버튼 클릭 이벤트
+            // 2. 다음화살버튼 클릭 이벤트
+            // 3. 이전화살버튼 클릭 이벤트
             // 4. 페이지버튼 함수
             // 5. 페이지버튼 클릭 이벤트
-            var cnt = 0;
+
+            var n = $(".slide").length;
+            var presentPage = 0;
+            var targetPage = 0;
 
             function mainSlideFn() {
-                // $(".slide").css({zIndex:1});
-                $(".slide").eq(cnt).css({zIndex:3}).stop().animate({opacity:0}, 0).animate({opacity:1}, 1000);
-                $(".slide").eq(cnt-1).css({zIndex:2});
+                $(".slide").css({zIndex:1});
+                $(".slide").eq(targetPage).css({zIndex:3}).stop().animate({opacity:0}, 0).animate({opacity:1}, 1000);
+                $(".slide").eq(presentPage).css({zIndex:2});
+                presentPage = targetPage;
+                pageBtnFn();
             }
 
-            function nextSlideFn() {
-                cnt++;
-                mainSlideFn();
-            }
-
-            function prevSlideFn() {
-
+            function pageBtnFn() {
+                $(".page-btn").removeClass("addPage");
+                $(".page-btn").eq(targetPage).addClass("addPage");
             }
 
             $(".next").on({
                 click(e) {
                     e.preventDefault();
-                    nextSlideFn();
+                    targetPage++;
+                    targetPage>(n-1) ? targetPage=0 : targetPage;
+                    mainSlideFn();
                 }
             });
             
             $(".prev").on({
                 click(e) {
                     e.preventDefault();
-
+                    targetPage--;
+                    targetPage<0 ? targetPage=(n-1) : targetPage;
+                    mainSlideFn();
                 }
             });
 
-            function pageBtnFn() {
-
-            }
-
-            $(".page-btn").each(function(index, element) {
+            $(".page-btn").each(function(index) {
                 $(this).on({
                     click(e) {
                         e.preventDefault();
-
+                        targetPage = index;
+                        mainSlideFn();
                     }
                 });
             });

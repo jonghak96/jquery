@@ -9,6 +9,7 @@
 
     var litho = {
         init: function() {
+            this.popupFn();
             this.headerFn();
             this.mainFn();
             this.section01Fn();
@@ -23,6 +24,76 @@
             this.section10Fn();
             this.footerFn();
         },
+
+
+        popupFn() {
+
+            // 스토리보드
+            // 1. 팝업창 만들기
+            // 2. 팝업창 닫기
+            // 3. 체크박스 눌러서 쿠키체크
+            // 4. 쿠키설정
+            
+            // 팝업창 열기.
+            function popupOpen() {
+                // window.open("파일이름", "팝업창이름", "width,height,top,left");
+                window.open("./popup.html", "popup20210524", "width=420,height=712,top=150,left=200");
+            }
+            popupOpen();
+            
+            // 팝업창 닫기.
+            $(".close-btn").on({
+                click(e) {
+                    e.preventDefault();
+                    
+                    // 체크박스 클릭 여부 확인 : true | false
+                    if(document.checkForm.chkName.checked) {
+                        // 팝업창 쿠키 설정 : 함수이름(쿠키이름,쿠키값,만료일수)
+                        setCookieFn("popup20210524", "no", 1); // argument(전달인자)
+                    }
+                    
+                    // window.close();
+                    // self.close();
+                }
+            });
+            
+            var today = null;
+            var txt = "";
+
+            function setCookieFn(name, value, expires) { // parameter
+                console.log(name, value, expires);
+                console.log(document.cookie); // 쿠키 가져오기.
+                // 쿠키 설정 규칙.
+                today = new Date();
+                console.log(today);
+                // console.log(today.getFullYear());
+                // console.log(today.getMonth()+1);
+                // console.log(today.getDate());
+                // console.log(today.getHours());
+                // console.log(today.getMinutes());
+                // console.log(today.getSeconds());
+                // 세팅하기.
+                // console.log(today.setFullYear());
+                // console.log(today.setMonth());
+                // console.log(today.setDate());
+                // console.log(today.setHours());
+                // console.log(today.setMinutes());
+                // console.log(today.setSeconds());
+                // 만료일 세팅.
+                today.setDate(today.getDate() + expires);
+                console.log(today);
+                // 쿠키 설정 : popup20210524=no; expires=표준시;
+                // txt = name + "=" + value + ";" + " expires=" + today.toUTCString() + ";";
+                txt = `${name}=${value}; expires=${today.toUTCString()};`;
+                console.log(txt);
+                document.cookie = txt;
+                console.log(document.cookie);
+            }
+
+
+
+        },
+
 
         headerFn() {
             var t = 0;
@@ -43,7 +114,11 @@
                 }
             });
         },
+
+        
         mainFn() {},// mainFn() //
+
+
         section01Fn() {
             // 페이드 인아웃 슬라이드 알고리즘
             // 스토리보드 (머릿속에 추상화 한다음, 디버깅하면서 코드작성.)
@@ -134,6 +209,8 @@
             });
 
         },// section01Fn() //
+
+        
         section02Fn() {},
         section03Fn() {},
         section04Fn() {},
