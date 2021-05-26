@@ -21,8 +21,8 @@
                 var value = "";
                 var cookies = document.cookie.split(";");
                 // for (let i=0;i<cookies.length;i++) {
-                $.each(cookies, function() {
-                    let cookie = cookies[i].trim();
+                $.each(cookies, function(index, element) {
+                    let cookie = element.trim();
                     let startIdx = name.length + 1;
                     let endInx = cookie.length;
                     let cookieName = cookie.slice(0, startIdx-1);
@@ -37,7 +37,8 @@
                 click(e) {
                     e.preventDefault();
                     // 쿠키 설정
-                    if(document.closeForm.checkboxName.checked) {
+                    // if(document.closeForm.checkboxName.checked) {
+                    if($("#checkboxId").is(":checked")) {
                         setCookieFn("popup20210528", "no", 1);
                     } 
                     // 팝업창 닫기

@@ -61,7 +61,7 @@
             // 팝업창 열기.
             function popupOpen() {
                 var isCookie = getCookieFn("popup20210526_01");
-console.log(isCookie);
+                // console.log(isCookie);
                 if(isCookie!="no") {
                     // window.open("파일이름", "팝업창이름", "width,height,top,left");
                     window.open("./popup.html", "popup20210526_01", "width=420,height=712,top=150,left=200");
