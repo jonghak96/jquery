@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" class="addScroll">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/lib/jquery.min.1.12.4.js"></script>
+</head>
+<body>
+<div id="popup-wrap">
+
+    <form action="" name="checkForm">
+        <span class="close-wrap">
+            <input type="checkbox" id="chkId" name="chkName" value="">
+            <label for="chkId">오늘 하루동안 열지 않음.</label>
+            <button class="close-btn">Close</button>
+        </span>
+    </form>
+
+</div>
+<script>
+    ;(function($) {
+
+        $(".close-btn").on({
+                click(e) {
+                    e.preventDefault();
+                    
+                    // 체크박스 클릭 여부 확인 : true | false
+                    // if(document.checkForm.chkName.checked) {
+                    if($("#chkId").is(":checked")) {
+                        // 팝업창 쿠키 설정 : 함수이름(쿠키이름,쿠키값,만료일수)
+                        setCookieFn("popup_20210528_01", "yes", 1); // argument(전달인자)
+                        console.log($("#chkId").is(":checked"));
+                    }
+                    
+                    window.close();
+                    // self.close();
+                }
+            });
+            
+            var today = null;
+            var txt = "";
+
+            function setCookieFn(name, value, expires) { // parameter
+                // console.log(name, value, expires);
+                // console.log(document.cookie); // 쿠키 가져오기.
+                // 쿠키 설정 규칙.
+                today = new Date();
+                // console.log(today);
+                // console.log(today.getFullYear());
+                // console.log(today.getMonth()+1);
+                // console.log(today.getDate());
+                // console.log(today.getHours());
+                // console.log(today.getMinutes());
+                // console.log(today.getSeconds());
+                // 세팅하기.
+                // console.log(today.setFullYear());
+                // console.log(today.setMonth());
+                // console.log(today.setDate());
+                // console.log(today.setHours());
+                // console.log(today.setMinutes());
+                // console.log(today.setSeconds());
+                // 만료일 세팅.
+                today.setDate(today.getDate() + expires);
+                // console.log(today);
+                // 쿠키 설정 : popup20210524=no; expires=표준시;
+                // txt = name + "=" + value + ";" + " expires=" + today.toUTCString() + ";";
+                txt = `${name}=${value};expires=${today.toUTCString()};path=/;`;
+                // console.log(txt);
+                document.cookie = txt;
+                // console.log(document.cookie);
+            }
+
+
+    })(jQuery);
+</script>
+<!-- <script src="./js/main_slide.js"></script> -->
+</body>
+</html>

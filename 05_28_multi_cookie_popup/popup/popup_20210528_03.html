@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" class="addScroll">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창03</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/lib/jquery.min.1.12.4.js"></script>
+</head>
+<body>
+<div id="popup-wrap">
+
+    <form action="" name="checkForm">
+        <span class="close-wrap">
+            <input type="checkbox" id="chkId" name="chkName" value="">
+            <label for="chkId">3일동안 열지 않음.</label>
+            <button class="close-btn">Close</button>
+        </span>
+    </form>
+
+</div>
+<script>
+    ;(function($) {
+
+        $(".close-btn").on({
+                click(e) {
+                    e.preventDefault();
+                    
+                    if($("#chkId").is(":checked")) {
+                        setCookieFn("popup_20210528_03", "yes", 3);
+                        console.log($("#chkId").is(":checked"));
+                    }
+                    // window.close();
+                    self.close();
+                }
+            });
+            
+            var today = null;
+            var txt = "";
+
+            function setCookieFn(name, value, expires) { // parameter
+                today = new Date();
+                today.setDate(today.getDate() + expires);
+                txt = `${name}=${value};expires=${today.toUTCString()};path=/;`;
+                document.cookie = txt;
+            }
+
+    })(jQuery);
+</script>
+<!-- <script src="./js/main_slide.js"></script> -->
+</body>
+</html>
