@@ -32,27 +32,7 @@
                 return value;
             }
 
-            // 클로즈버튼 클릭 이벤트
-            $(".close-btn").on({
-                click(e) {
-                    e.preventDefault();
-                    // 쿠키 설정
-                    // if(document.closeForm.checkboxName.checked) {
-                    if($("#checkboxId").is(":checked")) {
-                        setCookieFn("popup20210528", "no", 1);
-                    } 
-                    // 팝업창 닫기
-                    window.close();
-                    // self.close();
-                }
-            });
-            // 쿠키 설정 함수
-            function setCookieFn(name, value, expires) {
-                var today = new Date();
-                today.setDate(today.getDate()+expires);
-                var txt = `${name}=${value}; expires=${today};`;
-                document.cookie = txt;
-            }
+
         }
     };
     litho.init();

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창03</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/lib/jquery.min.1.12.4.js"></script>
+</head>
+<body>
+<div id="popup-wrap">
+
+    <form action="" name="checkForm">
+        <span class="close-wrap">
+            <input type="checkbox" id="checkId" name="checkName" value="">
+            <label for="checkId">7일동안 열지 않음.</label>
+            <button class="close-btn">Close</button>
+        </span>
+    </form>
+
+</div>
+<script>
+    // 클로즈버튼 클릭 이벤트
+    $(".close-btn").on({
+        click(e) {
+            e.preventDefault();
+            // 쿠키 설정
+            // if(document.closeForm.checkboxName.checked) {
+            if($("#checkId").is(":checked")) {
+                setCookieFn("popup_20210529_03", "yes", 7);
+            } 
+            // 팝업창 닫기
+            window.close();
+            // self.close();
+        }
+    });
+    // 쿠키 설정 함수
+    function setCookieFn(name, value, expires) {
+        var today = new Date();
+        today.setDate(today.getDate()+expires);
+        var txt = `${name}=${value};expires=${today};path=/;`;
+        document.cookie = txt;
+    }
+</script>
+<!-- <script src="../js/script.js"></script> -->
+</body>
+</html>
