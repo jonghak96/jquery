@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {background: url(../img/main_visual_bg.jpg);}
+
+#wrap {width: 100%;height: 100%;background: url(../img/main_visual.jpg) no-repeat 50% 50%;}
+#wrap #timer {width: 100%;}
+#wrap #timer .wrap {width: 100%;}
+#wrap #timer .wrap .gap {width: 100%;}
+#wrap #timer .wrap .gap .container {width: 100%;}
+
+#wrap #timer .wrap .gap .container .timer-box {max-width: 490px;height: 490px;position: relative;margin: 0 auto;top: 50px;}
+#wrap #timer .wrap .gap .container .timer-box img {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+#wrap #timer .wrap .gap .container .timer-box img:nth-child(1) {z-index: 1;}
+#wrap #timer .wrap .gap .container .timer-box img:nth-child(2) {z-index: 2;transform: rotate(305deg);} /*시*/
+#wrap #timer .wrap .gap .container .timer-box img:nth-child(3) {z-index: 3;transform: rotate(66deg);} /*분*/
+#wrap #timer .wrap .gap .container .timer-box img:nth-child(4) {z-index: 4;transform: rotate(120deg);} /*초*/
+#wrap #timer .wrap .gap .container .timer-box img:nth-child(5) {z-index: 5;}
+#wrap #timer .wrap .gap .container .timer-box img.hour {}
+#wrap #timer .wrap .gap .container .timer-box img.minute {}
+#wrap #timer .wrap .gap .container .timer-box img.second {}

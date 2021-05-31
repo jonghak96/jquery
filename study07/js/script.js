@@ -30,17 +30,6 @@
 
             // 팝업창 닫기. & 쿠키 설정.
 
-            // 모달창 닫기.
-            $("#modal_layer .close-btn").on({
-                click(e) {
-                    e.preventDefault();
-                    if($("#checkId").is(":checked")) {
-                        setCookieFn("popup_20210529_04", "yes", 30);
-                    }
-                    $("#modal_layer").stop().animate({top:"-100px"}, 300);
-                }
-            });
-
             // 모달창 열기.
             openModalFn();
             
@@ -50,6 +39,18 @@
                     $("#modal_layer").css({top:0});
                 }
             }
+
+            // 모달창 닫기.
+            $("#modal_layer .close-btn").on({
+                click(e) {
+                    e.preventDefault();
+                    if($("#checkId").is(":checked")) {
+                        setCookieFn("popup_20210529_04", "yes", 1); // -1 넣으면 날짜가 지나 쿠키 삭제됨.
+                    }
+                    $("#modal_layer").stop().animate({top:"-100px"}, 300);
+                    // $("#modal_layer").stop().fadeOut(600);
+                }
+            });
 
             // 쿠키 가져오기 함수.
             function getCookieFn(name) {
@@ -68,8 +69,11 @@
             // 쿠키 설정 함수.
             function setCookieFn(name, value, expires) {
                 var today = new Date();
-                today.setDate(today.getDate()+expires);
-                var txt = `${name}=${value};expires=${today};path=/;`;
+                // today.setDate(today.getDate()+expires);
+                today.setMinutes(today.getMinutes()+expires);
+                // today.setFullYear(today.getFullYear()+expires);
+                // var txt = `${name}=${value};expires=${today.toUTCString()};path=/;`;
+                var txt = `${name}=${value};expires=${today.toGMTString()};path=/;`;
                 document.cookie = txt;
             }
 
