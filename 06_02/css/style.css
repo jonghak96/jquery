@@ -21,14 +21,25 @@ body {background: url(../img/main_visual_bg.jpg);}
 
 #wrap #timer .wrap .gap .container .calendar-box {position: absolute;top: 50px;right: 80px;width: 300px;}
 #wrap #timer .wrap .gap .container .calendar-box .row1 {}
+#wrap #timer .wrap .gap .container .calendar-box .row1 span {position: relative;color: #999;cursor: pointer;}
+#wrap #timer .wrap .gap .container .calendar-box .row1 .prevMonth {position: absolute;left: 20px;}
+#wrap #timer .wrap .gap .container .calendar-box .row1 .prevMonth i {display: inline-block;width: 10px;height: 10px;border-top: 2px solid #999;border-left: 2px solid #999;transform: rotate(-45deg);}
+#wrap #timer .wrap .gap .container .calendar-box .row1 .prevMonth i:hover {border-top: 2px solid #fff;border-left: 2px solid #fff;}
+#wrap #timer .wrap .gap .container .calendar-box .row1 .nextMonth {position: absolute;right: 20px;}
+#wrap #timer .wrap .gap .container .calendar-box .row1 .nextMonth i {display: inline-block;width: 10px;height: 10px;border-top: 2px solid #999;border-right: 2px solid #999;transform: rotate(45deg);}
+#wrap #timer .wrap .gap .container .calendar-box .row1 .nextMonth i:hover {border-top: 2px solid #fff;border-right: 2px solid #fff;}
+
 #wrap #timer .wrap .gap .container .calendar-box .row2 {}
-#wrap #timer .wrap .gap .container .calendar-box .row2 h2 {font-size: 20px;color: #fff;text-align: center;padding: 15px 0 20px 0;}
+#wrap #timer .wrap .gap .container .calendar-box .row2 h2 {font-size: 20px;color: rgb(129, 126, 126);text-align: center;padding: 15px 0 20px 0;}
 #wrap #timer .wrap .gap .container .calendar-box .row2 h2 span {display: inline-block;margin: 0 10px;}
 #wrap #timer .wrap .gap .container .calendar-box .row3 {}
 #wrap #timer .wrap .gap .container .calendar-box .row3 table {width: 100%;text-align: center;color: #eee;/*border-collapse: collapse;*/}
-#wrap #timer .wrap .gap .container .calendar-box .row3 table th {height: 40px;border: 2px solid rgba(255, 255, 255, 0s);}
-#wrap #timer .wrap .gap .container .calendar-box .row3 table td {height: 40px;border: 2px solid rgba(255, 255, 255, 0s);}
+#wrap #timer .wrap .gap .container .calendar-box .row3 table th {height: 36px;border: 2px solid rgba(255, 255, 255, 0);}
+#wrap #timer .wrap .gap .container .calendar-box .row3 table td {height: 36px;border: 2px solid rgba(255, 255, 255, 0);}
+/* #wrap #timer .wrap .gap .container .calendar-box .row3 table td:hover {border: 2px solid rgba(255, 255, 255, .4);} */
 #wrap #timer .wrap .gap .container .calendar-box .row3 table tr:nth-child(1) td:nth-child(1),
 #wrap #timer .wrap .gap .container .calendar-box .row3 table tr:nth-child(1) td:nth-child(2) {color: #666;}
 #wrap #timer .wrap .gap .container .calendar-box .row3 table tr:nth-child(6) td:nth-child(6),
 #wrap #timer .wrap .gap .container .calendar-box .row3 table tr:nth-child(6) td:nth-child(7) {color: #666;}
+
+.addToday {background: royalblue;outline: 2px solid #222;outline-offset: -4px;}
