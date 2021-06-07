@@ -70,7 +70,7 @@
                 for(let i=(thisMonth_firstDay+thisMonth_lastDate); i<=42; i++) {
                     $("td").eq(i).text(nextDate++).css({color:"#555"});
                 }
-
+                
                 getTodayFn();
             }
 

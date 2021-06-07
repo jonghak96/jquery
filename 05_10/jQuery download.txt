@@ -12,6 +12,7 @@ https://github.com/jonghak96/jquery.git
 2. 달력 알고리즘
 3. 아날로그시계 알고리즘
 4. 쿠키
+
 5. 서버API (DB / PHP)
 6. ajax
 7. 로그인 로그아웃

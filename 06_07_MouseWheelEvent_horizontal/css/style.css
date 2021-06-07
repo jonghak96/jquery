@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#wrap {width: 100%;}
+
+#main {width: 1000%;}
+#main section {float: left;width: 1920px;height: 969px;line-height: 969px;}
+#main section h2 {font-size: 100px;text-transform: uppercase;text-align: center;color: #fff;}
+#section01 {background: #99c;}
+#section02 {background: #c99;}
+#section03 {background: #9c9;}
+#section04 {background: #99c;}
+#section05 {background: #c9c;}
+#section06 {background: #cc9;}
+#section07 {background: #c9c;}
+#section08 {background: #9cc;}
+#section09 {background: #9c9;}
+#section10 {background: #000;}
