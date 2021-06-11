@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Publisher" content="JHLee">
+    <meta name="Copyright" content="LITHO">
+
+    <title>THEMAZAA LITHO MAIN SLIDE</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/lib/jquery.min.1.12.4.js"></script>
+    <script src="./js/lib/jquery.touchSwipe.js"></script>
+
+</head>
+<body>
+<div id="wrap">
+
+    <h1>회원정보</h1>
+
+    <div class="form-box">
+        <form action="member.php" method="POST" name="member_form" id="memberForm">
+            <table>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="name" id="name" value="" placeholder="*이름을 입력하세요."></td>
+                </tr>
+                <tr>
+                    <td>번호</td>
+                    <td><input type="text" name="tel" id="tel" value="" placeholder="번호를 입력하세요. (예:010-1234-5678)"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="text" name="email" id="email" value="" placeholder="이메일을 입력하세요."></td>
+                </tr>
+            </table>
+            <button type="submit" class="submit-btn">전송</button>
+        </form>
+    </div>
+
+    <div class="members">
+        <table>
+            <tr>
+                <td>번호</td>
+                <td id="memberIdx"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td id="memberName"></td>
+            </tr>
+            <tr>
+                <td>번호</td>
+                <td id="memberTel"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td id="memberEmail"></td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+<script src="./js/script.js"></script>
+</body>
+</html>
